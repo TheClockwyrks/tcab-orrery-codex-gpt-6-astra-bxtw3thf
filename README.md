@@ -1,110 +1,45 @@
-# Orrery — starter project
+# Orrery
 
-This repository is the starting point for building **Orrery**, the game the
-specification under `specs/` describes. Read `specs/overview.md` first; it says
-how the rest of the specification is organized.
+A browser puzzle about programming brass machines to carry, bind, and transform celestial motes. Build on a hex field, write looping instruction tapes, and deliver six of each product. Improve three independent records: cost, cycles, and area.
 
-The project is already wired up. It builds on the **Simple 2D** engine, which
-is installed as an ordinary dependency and documents itself under `engine/` —
-read that alongside the specs. What is missing is the game, and the art and
-sound it plays.
+Includes a sixteen-challenge Campaign, ten standalone Extras, verified reference machines, produced sprites and animated apertures, particle effects, six sound cues, and a 32.8-second ambient score. Progress lasts for the current session.
 
-## What you own
+## Run
 
-**`src/game.ts`, and any new files you add beside it.**
+Requires Node.js compatible with Vite 8.
 
-Start by declaring and exporting `OrreryState`, exactly as `specs/state.md`
-fixes it, and `OrreryDebugApi`, the debug and automation surface
-`specs/instrumentation.md` specifies. The stub in `src/game.ts` is written
-against both names, so the project does not compile until they exist — a fresh
-workspace failing `npm run typecheck` is the starting point, not a broken seed.
+```sh
+npm ci
+npm run dev
+```
 
-`src/game.ts` then exports `game`, a `Game<OrreryState, OrreryDebugApi>`: three
-functions over that state. `initialize` builds the state and the debug surface
-once and returns them together as `[state, debug]`; `update` takes the current
-state as a read-only view (`DeepReadonly<OrreryState>`, from `ts-essentials`)
-and returns the next state, advanced against the frame's delta time in seconds;
-and `render` is handed that next state, read-only again, and draws it. The
-engine holds the state by value and replaces it with whatever `update` returns,
-so a frame builds the next state from the current one rather than writing into
-it, and the type is what guarantees that rendering changes nothing. All three
-currently throw `"not implemented"`. Implement them.
+```sh
+npm run build
+npm run preview
+```
 
-**The pointer comes from the engine.** The machine is built with the pointer,
-and the engine hands the game its position already in logical stage units along
-with its press and release edges — read the engine's input documentation for
-the API. `specs/controls.md` and `specs/editor.md` state what Orrery does with
-the three of them.
+The production site is `dist/index.html`. Serve `dist/` from any static host, including beneath a URL sub-path. All runtime resources are local and page-relative. The committed `assets/` directory is exposed through `public/assets`; production builds copy it without running any asset-generation tools.
 
-The debug surface is a required deliverable. The engine returns it from
-`engine.debug` exactly as `initialize` handed it over, and that is how the game
-is driven from code, so it is present and exactly as
-`specs/instrumentation.md` specifies. Because nothing holds a writable state,
-its operations are written in the shape of `update`: a pose takes the current
-state and returns the next, and a caller applies it through
-`engine.apply((s) => debug.loadChallenge(s, challenge))`; a reading takes the
-state and returns what it read, as `debug.snapshot(engine.state)`. Nothing is
-published to the page.
+## Controls
 
-`OrreryState` **is a contract**. Keep every field, under the name, type, and
-meaning `specs/state.md` gives it. You may add fields, but only for data you
-can rebuild from the declared ones: the declared fields are the whole of the
-authoritative state, and the surface's `reset()` restores exactly those.
+- Menus: arrow keys and Enter, or pointer/touch. Escape returns.
+- Build: drag parts from the tray. Drag placed parts to move them. Q/E rotate; W/S change arm length; X deletes. Drag an open track's end to extend or shorten it.
+- Tape: click a cell, then G grab, V drop, A/D rotate, Z/C pivot, W/S extend/retract, T/B advance/recede. R writes a reset; Y repeats the prefix. Delete blanks a cell; Backspace erases the previous one. Arrow keys move the cursor.
+- U/I undo/redo edits.
+- Space starts or pauses; N steps; comma/period change speed; Escape stops.
+- M toggles sound. Backtick toggles the engine diagnostics.
 
-**You also produce every asset the game shows and plays.** Asset-generation
-tools are on your `PATH` while you build here. `specs/assets.md` is the
-contract: what to produce, which tool produces it, the path it lands at, and the
-bar it is held to. The finished files are committed to this repository and
-loaded through the engine's asset loader at runtime, and `npm run build` never
-invokes the tools.
+## Verification and source
 
-`@clockwyrks/particle-runtime` is already a dependency, vendored into this
-repository and resolved by a `file:` entry in `package.json`. It plays a
-produced `system.json` into a 2D drawing context — the one `render` receives.
-Import it like any other dependency.
+```sh
+npm run typecheck
+npm run lint
+npm run format
+npm test
+```
 
-Tests you write belong beside your sources as `src/**/*.test.ts`. `npm test`
-runs them in process, with coverage over `src/`. The engine's documentation
-carries a complete worked example of testing a game this way.
+The simulation, placement geometry, editor transitions, debug surface, and renderer live in separate modules under `src/`. State transitions copy their input; the renderer never changes game state. The engine owns input, audio, assets, timing, and diagnostics. Reference solutions are available through `engine.debug.referenceSolution`, and tests run all 26 to completion within the specified cycle limit.
 
-## What you must not edit
+`showcase/` contains screenshots and a 22.5-second draw-command replay captured from a machine built with the editor. `scripts/capture.html` and `scripts/capture.mjs` are development-only capture tools; with the dev server running, `node scripts/capture.mjs` recreates the media. They are not included in the production site.
 
-- **`src/main.ts`** — the fixed entry point. It creates the engine over the
-  page's canvas, binds `game` to it, and runs.
-- **`src/constants.ts`** — every figure the specification fixes: the stage,
-  field, and editor geometry, the mote and part rosters, the costs, the
-  instruction set, the speeds, the action names and bindings, the cue names,
-  the produced-asset paths, and the screen copy. Read from it.
-- **`index.html`** — the page and the canvas the engine fits the stage into.
-- **The toolchain** — `package.json`, `tsconfig.json`, `vite.config.ts`,
-  `vitest.config.ts`, `eslint.config.js`, `.prettierrc.json`, `.prettierignore`,
-  and `.gitignore`.
-- **`.vendor/`** — the vendored engine and runtime libraries.
-- **`engine/`** — the engine's own documentation.
-
-Add dependencies to `package.json` if you genuinely need them, and commit the
-`package-lock.json` — the build is installed with `npm ci`. Leave the existing
-entries alone.
-
-## Commands
-
-- `npm run dev` — serves the game with hot reload.
-- `npm run build` — type-checks, then emits the static site into `dist/`.
-- `npm run preview` — serves `dist/` for a final check.
-- `npm run typecheck` — `tsc --noEmit`.
-- `npm run lint` — ESLint.
-- `npm run format` — Prettier, in check mode.
-- `npm test` — Vitest over `src/**/*.test.ts`, with coverage.
-
-## Before you finish
-
-- `npm run build` produces `dist/` with `index.html` at its root, and that
-  directory runs as-is on any static host, at its root and under a sub-path.
-- `npm run typecheck`, `npm run lint`, `npm run format`, and `npm test` all
-  pass. The same four commands are run over the repository you leave behind.
-- The assets `specs/assets.md` asks for are produced and committed under
-  `assets/`, and the game loads them.
-- The `showcase/` directory `specs/showcase.md` asks for is present.
-- **Replace this file** with the `README.md` `specs/overview.md` asks the
-  finished build to ship: what the game is, how to install it, how to run it in
-  development, how to produce the production build, and the controls.
+`scripts/produce_assets.py` documents the one-time art and sound authoring process. It requires the authoring binaries supplied during development and is never called by install, test, or build. The generated PNG, JSON, WAV, and MIDI files are committed.

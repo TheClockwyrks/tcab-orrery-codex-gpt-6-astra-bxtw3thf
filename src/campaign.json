@@ -1,0 +1,364 @@
+[
+  {
+    "name": "The First Orbit",
+    "reagents": [
+      {
+        "motes": [{ "q": 0, "r": 0, "type": "sol" }],
+        "filaments": [],
+        "repeat": null
+      }
+    ],
+    "products": [
+      {
+        "motes": [{ "q": 0, "r": 0, "type": "sol" }],
+        "filaments": [],
+        "repeat": null
+      }
+    ],
+    "permitted": ["arm"],
+    "target": 6
+  },
+  {
+    "name": "The Travelling Star",
+    "reagents": [
+      {
+        "motes": [{ "q": 0, "r": 0, "type": "mercury" }],
+        "filaments": [],
+        "repeat": null
+      }
+    ],
+    "products": [
+      {
+        "motes": [{ "q": 0, "r": 0, "type": "mercury" }],
+        "filaments": [],
+        "repeat": null
+      }
+    ],
+    "permitted": ["piston", "track"],
+    "target": 6
+  },
+  {
+    "name": "Counterweights",
+    "reagents": [
+      {
+        "motes": [{ "q": 0, "r": 0, "type": "sol" }],
+        "filaments": [],
+        "repeat": null
+      },
+      {
+        "motes": [{ "q": 0, "r": 0, "type": "luna" }],
+        "filaments": [],
+        "repeat": null
+      }
+    ],
+    "products": [
+      {
+        "motes": [{ "q": 0, "r": 0, "type": "sol" }],
+        "filaments": [],
+        "repeat": null
+      },
+      {
+        "motes": [{ "q": 0, "r": 0, "type": "luna" }],
+        "filaments": [],
+        "repeat": null
+      }
+    ],
+    "permitted": ["biarm"],
+    "target": 6
+  },
+  {
+    "name": "A Threefold Sky",
+    "reagents": [
+      {
+        "motes": [{ "q": 0, "r": 0, "type": "comet" }],
+        "filaments": [],
+        "repeat": null
+      },
+      {
+        "motes": [{ "q": 0, "r": 0, "type": "nova" }],
+        "filaments": [],
+        "repeat": null
+      },
+      {
+        "motes": [{ "q": 0, "r": 0, "type": "meteor" }],
+        "filaments": [],
+        "repeat": null
+      }
+    ],
+    "products": [
+      {
+        "motes": [{ "q": 0, "r": 0, "type": "comet" }],
+        "filaments": [],
+        "repeat": null
+      },
+      {
+        "motes": [{ "q": 0, "r": 0, "type": "nova" }],
+        "filaments": [],
+        "repeat": null
+      },
+      {
+        "motes": [{ "q": 0, "r": 0, "type": "meteor" }],
+        "filaments": [],
+        "repeat": null
+      }
+    ],
+    "permitted": ["triarm"],
+    "target": 6
+  },
+  {
+    "name": "The Sixfold Instrument",
+    "reagents": [
+      {
+        "motes": [{ "q": 0, "r": 0, "type": "saturn" }],
+        "filaments": [],
+        "repeat": null
+      },
+      {
+        "motes": [{ "q": 0, "r": 0, "type": "jupiter" }],
+        "filaments": [],
+        "repeat": null
+      }
+    ],
+    "products": [
+      {
+        "motes": [{ "q": 0, "r": 0, "type": "saturn" }],
+        "filaments": [],
+        "repeat": null
+      },
+      {
+        "motes": [{ "q": 0, "r": 0, "type": "jupiter" }],
+        "filaments": [],
+        "repeat": null
+      }
+    ],
+    "permitted": ["hexarm"],
+    "target": 6
+  },
+  {
+    "name": "Lunar Affinity",
+    "reagents": [
+      { "motes": [{ "q": 0, "r": 0, "type": "luna" }], "filaments": [] }
+    ],
+    "products": [
+      {
+        "motes": [
+          { "q": 0, "r": 0, "type": "luna" },
+          { "q": 1, "r": 0, "type": "luna" }
+        ],
+        "filaments": [
+          { "a": { "q": 0, "r": 0 }, "b": { "q": 1, "r": 0 }, "weight": 1 }
+        ]
+      }
+    ],
+    "permitted": ["arm", "bind"],
+    "target": 6
+  },
+  {
+    "name": "The Waning Workshop",
+    "reagents": [
+      { "motes": [{ "q": 0, "r": 0, "type": "comet" }], "filaments": [] }
+    ],
+    "products": [
+      {
+        "motes": [
+          { "q": 0, "r": 0, "type": "dust" },
+          { "q": 1, "r": 0, "type": "dust" }
+        ],
+        "filaments": [
+          { "a": { "q": 0, "r": 0 }, "b": { "q": 1, "r": 0 }, "weight": 1 }
+        ]
+      }
+    ],
+    "permitted": ["arm", "wane", "bind"],
+    "target": 6
+  },
+  {
+    "name": "An Echo in Glass",
+    "reagents": [
+      { "motes": [{ "q": 0, "r": 0, "type": "dust" }], "filaments": [] }
+    ],
+    "products": [
+      {
+        "motes": [
+          { "q": 0, "r": 0, "type": "nova" },
+          { "q": 1, "r": 0, "type": "comet" }
+        ],
+        "filaments": [
+          { "a": { "q": 0, "r": 0 }, "b": { "q": 1, "r": 0 }, "weight": 1 }
+        ]
+      }
+    ],
+    "permitted": ["arm", "wheel", "mirror", "bind"],
+    "target": 6
+  },
+  {
+    "name": "The Silver Ladder",
+    "reagents": [
+      { "motes": [{ "q": 0, "r": 0, "type": "mercury" }], "filaments": [] },
+      { "motes": [{ "q": 0, "r": 0, "type": "saturn" }], "filaments": [] }
+    ],
+    "products": [
+      { "motes": [{ "q": 0, "r": 0, "type": "jupiter" }], "filaments": [] }
+    ],
+    "permitted": ["arm", "ascend"],
+    "target": 6
+  },
+  {
+    "name": "A Grand Conjunction",
+    "reagents": [
+      { "motes": [{ "q": 0, "r": 0, "type": "venus" }], "filaments": [] }
+    ],
+    "products": [
+      { "motes": [{ "q": 0, "r": 0, "type": "luna" }], "filaments": [] }
+    ],
+    "permitted": ["arm", "conjoin"],
+    "target": 6
+  },
+  {
+    "name": "Light from Nothing",
+    "reagents": [
+      { "motes": [{ "q": 0, "r": 0, "type": "dust" }], "filaments": [] }
+    ],
+    "products": [
+      {
+        "motes": [
+          { "q": 0, "r": 0, "type": "umbra" },
+          { "q": 1, "r": 0, "type": "lumen" }
+        ],
+        "filaments": [
+          { "a": { "q": 0, "r": 0 }, "b": { "q": 1, "r": 0 }, "weight": 1 }
+        ]
+      }
+    ],
+    "permitted": ["arm", "eclipse", "bind"],
+    "target": 6
+  },
+  {
+    "name": "The Fifth Essence",
+    "reagents": [
+      { "motes": [{ "q": 0, "r": 0, "type": "nebula" }], "filaments": [] },
+      { "motes": [{ "q": 0, "r": 0, "type": "comet" }], "filaments": [] },
+      { "motes": [{ "q": 0, "r": 0, "type": "nova" }], "filaments": [] },
+      { "motes": [{ "q": 0, "r": 0, "type": "meteor" }], "filaments": [] }
+    ],
+    "products": [
+      { "motes": [{ "q": 0, "r": 0, "type": "aether" }], "filaments": [] }
+    ],
+    "permitted": ["arm", "biarm", "confluence"],
+    "target": 6
+  },
+  {
+    "name": "The Four Winds",
+    "reagents": [
+      {
+        "motes": [{ "q": 0, "r": 0, "type": "aether" }],
+        "filaments": [],
+        "repeat": null
+      }
+    ],
+    "products": [
+      {
+        "motes": [
+          { "q": 0, "r": 0, "type": "nebula" },
+          { "q": 1, "r": 0, "type": "comet" },
+          { "q": -1, "r": 1, "type": "nova" },
+          { "q": 0, "r": -1, "type": "meteor" }
+        ],
+        "filaments": [
+          { "a": { "q": 0, "r": 0 }, "b": { "q": 1, "r": 0 }, "weight": 1 },
+          { "a": { "q": 0, "r": 0 }, "b": { "q": -1, "r": 1 }, "weight": 1 },
+          { "a": { "q": 0, "r": 0 }, "b": { "q": 0, "r": -1 }, "weight": 1 }
+        ],
+        "repeat": null
+      }
+    ],
+    "permitted": ["arm", "dispersion", "manifold"],
+    "target": 6
+  },
+  {
+    "name": "A Necessary Absence",
+    "reagents": [
+      {
+        "motes": [
+          { "q": 0, "r": 0, "type": "nova" },
+          { "q": 1, "r": 0, "type": "dust" }
+        ],
+        "filaments": [
+          { "a": { "q": 0, "r": 0 }, "b": { "q": 1, "r": 0 }, "weight": 1 }
+        ],
+        "repeat": null
+      }
+    ],
+    "products": [
+      {
+        "motes": [{ "q": 0, "r": 0, "type": "nova" }],
+        "filaments": [],
+        "repeat": null
+      }
+    ],
+    "permitted": ["arm", "sunder", "void"],
+    "target": 6
+  },
+  {
+    "name": "Trine",
+    "reagents": [
+      { "motes": [{ "q": 0, "r": 0, "type": "nova" }], "filaments": [] }
+    ],
+    "products": [
+      {
+        "motes": [
+          { "q": 0, "r": 0, "type": "nova" },
+          { "q": 1, "r": 0, "type": "nova" }
+        ],
+        "filaments": [
+          { "a": { "q": 0, "r": 0 }, "b": { "q": 1, "r": 0 }, "weight": 3 }
+        ]
+      }
+    ],
+    "permitted": ["arm", "triune"],
+    "target": 6
+  },
+  {
+    "name": "The Atlas Engine",
+    "reagents": [
+      {
+        "motes": [{ "q": 0, "r": 0, "type": "nebula" }],
+        "filaments": [],
+        "repeat": null
+      },
+      {
+        "motes": [{ "q": 0, "r": 0, "type": "comet" }],
+        "filaments": [],
+        "repeat": null
+      },
+      {
+        "motes": [{ "q": 0, "r": 0, "type": "nova" }],
+        "filaments": [],
+        "repeat": null
+      },
+      {
+        "motes": [{ "q": 0, "r": 0, "type": "meteor" }],
+        "filaments": [],
+        "repeat": null
+      }
+    ],
+    "products": [
+      {
+        "motes": [
+          { "q": 0, "r": 0, "type": "nebula" },
+          { "q": 1, "r": 0, "type": "comet" },
+          { "q": -1, "r": 1, "type": "nova" },
+          { "q": 0, "r": -1, "type": "meteor" }
+        ],
+        "filaments": [
+          { "a": { "q": 0, "r": 0 }, "b": { "q": 1, "r": 0 }, "weight": 1 },
+          { "a": { "q": 0, "r": 0 }, "b": { "q": -1, "r": 1 }, "weight": 1 },
+          { "a": { "q": 0, "r": 0 }, "b": { "q": 0, "r": -1 }, "weight": 1 }
+        ],
+        "repeat": null
+      }
+    ],
+    "permitted": ["arm", "confluence", "dispersion", "manifold"],
+    "target": 6
+  }
+]

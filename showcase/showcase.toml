@@ -1,0 +1,15 @@
+[[media]]
+file = "first-orbit.json.gz"
+name = "From an empty sky to a working orbit"
+
+[[media]]
+file = "machine.png"
+name = "A programmed arm carries its first sun"
+
+[[media]]
+file = "complete.png"
+name = "Six suns delivered, a machine measured"
+
+[[media]]
+file = "title.png"
+name = "Welcome to the celestial workshop"

@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+  <body style="margin: 0; background: #080f1b">
+    <canvas
+      id="stage"
+      style="width: 1280px; height: 720px; display: block"
+    ></canvas>
+    <script type="module">
+      import { createEngine, ConstantClock } from "@clockwyrks/simple-2d";
+      import { game, BACKGROUND } from "../src/game.ts";
+      import { LAYOUT } from "../src/constants.ts";
+      const engine = createEngine({
+        canvas: document.querySelector("canvas"),
+        width: 1280,
+        height: 720,
+        game,
+        background: BACKGROUND,
+        assetRoot: "../assets/",
+        layout: LAYOUT,
+        clock: new ConstantClock(1000 / 60),
+      });
+      await engine.initialize();
+      window.captureEngine = engine;
+      await engine.advance(1);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,9 @@
+# Orrery
+
+Set the heavens turning. Orrery is a quiet machine-building puzzle about celestial matter, precise motion, and the pleasure of watching a small invention work. Your workbench is a hexagonal patch of night sky. Your materials are dust, icy comets, fiery novas, planets, and stranger substances. Your tools are brass arms, turning wheels, tracks, and engraved sigils. A challenge gives you reagents and asks for a particular constellation. Everything between those two things is yours to invent.
+
+Begin with an empty field. Drag a rise into place to supply your material, and a set to receive the finished product. Choose an arm, adjust its reach, and write a looping tape: grab, turn, drop, return. As the puzzles grow, filaments join motes into rigid shapes, several arms work to one shared rhythm, and sigils transform the matter passing over them. A simple delivery can become an intricate procession of handoffs, transformations, and carefully timed turns.
+
+Press Space and watch your machine come alive. Glassy bodies swing through the dark on brass spokes; apertures turn beneath them, and delivered constellations dissolve into sparks. Every mote needs room along its whole path. A collision freezes the machine where it went wrong, so you can stop, revise the tape, and try again. Pause, step one cycle at a time, or accelerate a machine you trust. Undo and redo keep experimentation comfortable.
+
+The sixteen-challenge Campaign introduces the workshop's tools and leads toward a large engine that gathers four essences, unites them, separates them again, and assembles a new constellation. Extras offers ten independent problems, all available from the beginning, including twin moons, planetary ascension, shadow and light, and repeating chains. Deliver each product six times to finish, then return for a better machine: lower cost, fewer cycles, and less area. An elegant solution is always worth another orbit.
